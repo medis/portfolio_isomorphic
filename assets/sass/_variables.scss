@@ -1,0 +1,4 @@
+/* needed to print ie9 class */
+$breakpoint-no-query-fallbacks: true;
+$tablet: 640px, 'no-query' '.lt-ie9';
+$desktop: 900px, 'no-query' '.lt-ie9';

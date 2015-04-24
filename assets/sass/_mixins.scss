@@ -1,0 +1,4 @@
+@mixin menuColour($colour) {
+  border-bottom-color: $colour;
+  i { color: $colour; }
+}

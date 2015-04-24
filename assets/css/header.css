@@ -1,0 +1,85 @@
+#navigation #menuToggle {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10%;
+  text-align: center;
+  cursor: pointer;
+}
+#navigation .main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 89.5%;
+  border-left: 1px solid #222b2e;
+}
+#navigation .main-menu li {
+  display: block;
+  border-bottom: 1px solid #222b2e;
+  border-top: 1px solid #3c4042;
+}
+#navigation .main-menu li:first-child {
+  border-top: none;
+}
+#navigation .main-menu li a {
+  text-decoration: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #daddde;
+  padding: 14px 30px;
+  display: block;
+}
+#navigation .main-menu li a i {
+  font-size: 25px;
+  vertical-align: bottom;
+  min-width: 27px;
+  text-align: center;
+  padding-right: 10px;
+}
+#navigation .main-menu li:hover#about, #navigation .main-menu li.active#about {
+  border-bottom-color: #fffd36;
+}
+#navigation .main-menu li:hover#about i, #navigation .main-menu li.active#about i {
+  color: #fffd36;
+}
+#navigation .main-menu li:hover#blog, #navigation .main-menu li.active#blog {
+  border-bottom-color: #ff2929;
+}
+#navigation .main-menu li:hover#blog i, #navigation .main-menu li.active#blog i {
+  color: #ff2929;
+}
+#navigation .main-menu li:hover#portfolio, #navigation .main-menu li.active#portfolio {
+  border-bottom-color: #4ce84f;
+}
+#navigation .main-menu li:hover#portfolio i, #navigation .main-menu li.active#portfolio i {
+  color: #4ce84f;
+}
+#navigation .main-menu li:hover#contact, #navigation .main-menu li.active#contact {
+  border-bottom-color: #4242ff;
+}
+#navigation .main-menu li:hover#contact i, #navigation .main-menu li.active#contact i {
+  color: #4242ff;
+}
+#navigation .main-menu li.active {
+  border-bottom-width: 5px;
+}
+
+/*header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -4px 4px rgba(0,0,0,0.1);
+  padding: 23px 0;
+  background: #FFF;
+}*/
+#banner {
+  text-align: center;
+  padding: 35px 0px;
+  background: #eaeaea;
+}
+#banner img {
+  width: 50%;
+  height: auto;
+}

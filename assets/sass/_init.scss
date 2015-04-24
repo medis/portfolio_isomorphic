@@ -1,0 +1,20 @@
+/*
+ Import this file to individual scss files like so:
+ @import "init";
+*/
+
+@import "susy";
+@import "breakpoint";
+@import "_variables";
+@import "_mixins";
+
+// 1280px aka 80em max-width
+$susy: (
+  columns: 12,
+  gutters: .25,
+  math: fluid,
+  container: 80em,
+  gutter-position: after,
+);
+
+@include layout($susy float);

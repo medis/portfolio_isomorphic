@@ -1,0 +1,66 @@
+/*
+ Import this file to individual scss files like so:
+ @import "init";
+*/
+/* needed to print ie9 class */
+.container, #app {
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container:after, #app:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.content {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+aside {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+}
+
+main {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 75%;
+  float: left;
+}
+
+#portfolio-list > li {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (min-width: 900px) {
+  #portfolio-list > li {
+    width: 250px;
+    height: 250px;
+  }
+}
+.lt-ie9 #portfolio-list > li {
+  width: 250px;
+  height: 250px;
+}
+
+@media (min-width: 900px) {
+  #portfolio-list .images li {
+    width: 250px;
+    height: 212px;
+  }
+}
+.lt-ie9 #portfolio-list .images li {
+  width: 250px;
+  height: 212px;
+}

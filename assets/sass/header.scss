@@ -1,0 +1,68 @@
+@import "_mixins";
+
+#navigation {
+  #menuToggle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 89.5%;
+    border-left: 1px solid #222b2e;
+    li {
+    	display: block;
+      border-bottom: 1px solid #222b2e;
+      border-top: 1px solid #3c4042;
+      &:first-child { border-top: none; }
+    	a {
+    		text-decoration: none;
+    		font-size: 15px;
+        text-transform: uppercase;
+        color: #daddde;
+        padding: 14px 30px;
+        display: block;
+        i {
+          font-size: 25px;
+          vertical-align: bottom;
+          min-width: 27px;
+          text-align: center;
+          padding-right: 10px;
+        }
+    	}
+      &:hover, &.active {
+        &#about { @include menuColour(#fffd36); }
+        &#blog { @include menuColour(#ff2929); }
+        &#portfolio { @include menuColour(#4ce84f); }
+        &#contact { @include menuColour(#4242ff); }
+      }
+      &.active { border-bottom-width: 5px; }
+    }
+  }
+}
+
+/*header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -4px 4px rgba(0,0,0,0.1);
+  padding: 23px 0;
+  background: #FFF;
+}*/
+
+#banner {
+  text-align: center;
+  padding: 35px 0px;
+  background: #eaeaea;
+  img { 
+    width: 50%;
+    height: auto;
+  }
+}
