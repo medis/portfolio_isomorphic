@@ -3,7 +3,7 @@ module.exports = function (shipit) {
 
   shipit.initConfig({
     default: {
-      workspace: '/tmp/portfolio',
+      workspace: 'C:/tmp/portfolio',
       deployTo: '/var/www/portfolio',
       repositoryUrl: 'https://github.com/medis/portfolio.git',
       ignores: ['.git', 'node_modules'],
