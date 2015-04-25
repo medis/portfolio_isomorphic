@@ -96,3 +96,6 @@ ul.social-wrapper li a.facebook:hover {
 ul.social-wrapper li a.twitter:hover {
   color: #00b6f1;
 }
+ul.social-wrapper li a.drupal:hover {
+  color: #0073ba;
+}
