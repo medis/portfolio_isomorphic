@@ -74,3 +74,83 @@ main {
   background: #000 url(/images/portfolio/yti/yti_logo.png) no-repeat center center;
   background-size: contain;
 }
+
+#welcome {
+  color: #5050ff;
+  font-size: 3em;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+}
+
+.intro-text {
+  padding: 4em 0;
+}
+.intro-text .icon {
+  padding-top: 3em;
+  text-align: center;
+}
+.intro-text .icon i {
+  font-size: 4em;
+  color: #cecece;
+}
+
+#top-skills-wrapper, #good-at-wrapper, #scratching-surface-wrapper {
+  opacity: 0;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 20, 0, 1);
+}
+
+#good-at-wrapper {
+  padding: 5em 0px;
+}
+
+#scratching-surface-wrapper {
+  padding-bottom: 5em;
+}
+
+.skills li {
+  border-top: 1px solid #d0d0d0;
+  padding: 1.6em 0;
+}
+.skills li:first-child {
+  border-top: none;
+}
+.skills li h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-bottom: 0.5em;
+  color: #675cff;
+}
+.skills li p {
+  margin: 0;
+}
+.skills li.server .favorite-stack {
+  padding-top: 0.8em;
+}
+.skills li.server ul.favorite-stack-list li {
+  padding: 0;
+  border-top: 0;
+}
+.skills li.server ul.favorite-stack-list li .stack-title {
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  width: 130px;
+  display: block;
+  float: left;
+}
+.skills li.server ul.favorite-stack-list li ul.other-software {
+  clear: left;
+  margin-left: 1.3em;
+  padding-top: 0.3em;
+}
+
+.header-wrapper {
+  overflow: hidden;
+  text-align: center;
+}
+
+.name {
+  font-weight: bold;
+}

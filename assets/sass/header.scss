@@ -47,16 +47,6 @@
   }
 }
 
-/*header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 -4px 4px rgba(0,0,0,0.1);
-  padding: 23px 0;
-  background: #FFF;
-}*/
-
 #banner {
   text-align: center;
   padding: 35px 0px;
@@ -64,5 +54,20 @@
   img { 
     width: 50%;
     height: auto;
+  }
+}
+ul.social-wrapper {
+  float: right;
+  li {
+    float: left;
+    padding-bottom: 0.3em;
+    a {
+      font-size: 3em;
+      margin-left: 0.3em;
+      color: #cecece;
+      &.linkedin:hover { color: rgb(0, 119, 181); }
+      &.facebook:hover { color: rgb(59, 89, 152); }
+      &.twitter:hover { color: rgb(0, 182, 241); }
+    }
   }
 }

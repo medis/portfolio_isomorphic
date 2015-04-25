@@ -26,6 +26,9 @@ app.rehydrate(dehydratedState, function(err, context) {
       React.withContext(context.getComponentContext(), function() {
         React.render(React.createFactory(Handler)(), mountNode, function() {
           // Server rendered.
+          $(document).ready(function() {
+            $(document).trigger('pageChange', [state.routes[1].name]);
+          });
         });
       });
       firstRender = false;
@@ -37,7 +40,7 @@ app.rehydrate(dehydratedState, function(err, context) {
             // New page rendered - reveal it's content.
             Animations.animate.revealPage();
             // Fire up page rendered event.
-            $(document).trigger('pageChange');
+            $(document).trigger('pageChange', [state.routes[1].name]);
           });
         });
       });

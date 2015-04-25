@@ -33,7 +33,11 @@ var Application = React.createClass({
           </div>
         </main>
         <footer id="footer">
-          <div className="date">2015</div>
+          <ul className="social-wrapper footer">
+            <li className="linkedin"><a className="linkedin" href="https://uk.linkedin.com/pub/audrius-bukauskas/45/983/879" target="_blank" rel="nofollow"><i className="fa fa-linkedin-square"></i></a></li>
+            <li className="facebook"><a className="facebook" href="https://www.facebook.com/audrius.bukauskas.7" target="_blank" rel="nofollow"><i className="fa fa-facebook-square"></i></a></li>
+            <li className="twitter"><a className="twitter" href="https://twitter.com/aubuka" target="_blank" rel="nofollow"><i className="fa fa-twitter-square"></i></a></li>
+          </ul>
         </footer>
       </div>
     );

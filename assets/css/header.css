@@ -65,15 +65,6 @@
   border-bottom-width: 5px;
 }
 
-/*header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 -4px 4px rgba(0,0,0,0.1);
-  padding: 23px 0;
-  background: #FFF;
-}*/
 #banner {
   text-align: center;
   padding: 35px 0px;
@@ -82,4 +73,26 @@
 #banner img {
   width: 50%;
   height: auto;
+}
+
+ul.social-wrapper {
+  float: right;
+}
+ul.social-wrapper li {
+  float: left;
+  padding-bottom: 0.3em;
+}
+ul.social-wrapper li a {
+  font-size: 3em;
+  margin-left: 0.3em;
+  color: #cecece;
+}
+ul.social-wrapper li a.linkedin:hover {
+  color: #0077b5;
+}
+ul.social-wrapper li a.facebook:hover {
+  color: #3b5998;
+}
+ul.social-wrapper li a.twitter:hover {
+  color: #00b6f1;
 }
