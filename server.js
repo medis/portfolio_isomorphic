@@ -26,7 +26,10 @@ server.use(koa_router(server))
     text: data.name + '<br/>' + data.message
   };
 
-  var transporter = nodemailer.createTransport(sendmailTransport());
+  var transporter = nodemailer.createTransport(sendmailTransport({
+    path: '/usr/sbin/sendmail'
+  }));
+  
   transporter.sendMail(mailOpts, function (error, response) {
   });
 
