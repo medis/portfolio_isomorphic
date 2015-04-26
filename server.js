@@ -23,13 +23,14 @@ server.use(koa_router(server))
     from: data.email,
     to: 'aubuka@gmail.com',
     subject: 'AUDRIUS.IO Contact',
-    text: data.name + '<br/>' + data.message
+    text: 'test',
+    html: data.name + '<br/>' + data.message
   };
 
   var transporter = nodemailer.createTransport(sendmailTransport({
     path: '/usr/sbin/sendmail'
   }));
-  
+
   transporter.sendMail(mailOpts, function (error, response) {
   });
 
