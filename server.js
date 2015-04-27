@@ -11,7 +11,7 @@ var React = require('react');
 var HtmlComponent = React.createFactory(require('./components/Html.jsx'));
 var parse = require('co-body');
 var nodemailer = require('nodemailer');
-var sendmailTransport = require('nodemailer-sendmail-transport');
+//var sendmailTransport = require('nodemailer-sendmail-transport');
 
 // Handle POST requests outside koa-router.
 server.use(koa_router(server))
@@ -27,12 +27,13 @@ server.use(koa_router(server))
     html: data.name + '<br/>' + data.message
   };
 
-  nodemailer.SMTP = {
-    host: 'localhost'
-  };
-  
-  var transporter = nodemailer.createTransport(sendmailTransport({
+  /*var transporter = nodemailer.createTransport(sendmailTransport({
     path: '/usr/sbin/sendmail'
+  }));*/
+  var transporter = nodemailer.createTransport(smtpTransport({
+    host: 'localhost',
+    port: 25,
+    secure: false
   }));
 
   transporter.sendMail(mailOpts, function (error, response) {
