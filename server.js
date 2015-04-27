@@ -27,6 +27,10 @@ server.use(koa_router(server))
     html: data.name + '<br/>' + data.message
   };
 
+  nodemailer.SMTP = {
+    host: 'localhost'
+  };
+  
   var transporter = nodemailer.createTransport(sendmailTransport({
     path: '/usr/sbin/sendmail'
   }));

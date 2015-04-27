@@ -51,7 +51,7 @@ var Contact = React.createClass({
   		url: "contact",
   		data: this.getValues(),
   		success: function(response) {
-  			this.setState({submitted: true});
+  			ctx.setState({submitted: true});
   		}
   	})
   	.fail(function() {
