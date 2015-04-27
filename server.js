@@ -20,11 +20,11 @@ server.use(koa_router(server))
   var data = yield parse(this);
 
   var mailOpts = {
-    from: data.email,
+    from: 'noreply@audrius.io',
     to: 'aubuka@gmail.com',
     subject: 'AUDRIUS.IO Contact',
     text: 'test',
-    html: data.name + '<br/>' + data.message
+    html: data.name + '<br/>' + data.email + '<br/>' + data.message
   };
 
   var transporter = nodemailer.createTransport(smtpTransport({
