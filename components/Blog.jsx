@@ -8,7 +8,10 @@ var Blog = React.createClass({
 
   render: function() {
   	return (
-  	  <p>Coming soon.</p>
+  		<div>
+	  	  <p>Coming soon.</p>
+	  	  <div>{process.env.RECAPTCHA}</div>
+  	  </div>
   	)
   }
 });

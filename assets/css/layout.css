@@ -64,3 +64,40 @@ main {
   width: 250px;
   height: 212px;
 }
+
+.form.contact .left {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (min-width: 640px) {
+  .form.contact .left {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+}
+.lt-ie9 .form.contact .left {
+  width: 49.15254%;
+  float: left;
+  margin-right: 1.69492%;
+}
+.form.contact .right {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (min-width: 640px) {
+  .form.contact .right {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+  }
+}
+.lt-ie9 .form.contact .right {
+  width: 49.15254%;
+  float: right;
+  margin-right: 0;
+}

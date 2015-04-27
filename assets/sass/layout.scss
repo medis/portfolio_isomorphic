@@ -25,3 +25,17 @@ main {
 		height: 212px;
 	}
 }
+.form.contact {
+	.left {
+		@include span(6 of 6);
+		@include breakpoint($tablet) {
+			@include span(6 of 12);
+		}
+	}
+	.right {
+		@include span(6 of 6);
+		@include breakpoint($tablet) {
+			@include span(6 of 12 last);
+		}
+	}
+}

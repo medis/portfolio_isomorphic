@@ -151,6 +151,38 @@ main {
   text-align: center;
 }
 
-.name {
+span.name {
   font-weight: bold;
+}
+
+.form.contact input[type="text"] {
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 50px;
+  border: solid 1px #bebebe;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: Roboto;
+  padding-left: 50px;
+}
+.form.contact textarea {
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 300px;
+  padding: 15px;
+}
+.form.contact .input-wrapper {
+  position: relative;
+}
+.form.contact i {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  font-size: 35px;
+  color: #cdcdcd;
 }
