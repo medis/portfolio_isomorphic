@@ -10,8 +10,7 @@ var serialize = require('serialize-javascript');
 var React = require('react');
 var HtmlComponent = React.createFactory(require('./components/Html.jsx'));
 var parse = require('co-body');
-var nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
+var Mailer = require('./server_components/mailer');
 
 // Handle POST requests outside koa-router.
 server.use(koa_router(server))
@@ -19,22 +18,7 @@ server.use(koa_router(server))
 
   var data = yield parse(this);
 
-  var mailOpts = {
-    from: 'noreply@audrius.io',
-    to: 'aubuka@gmail.com',
-    subject: 'AUDRIUS.IO Contact',
-    text: 'test',
-    html: data.name + '<br/>' + data.email + '<br/>' + data.message
-  };
-
-  var transporter = nodemailer.createTransport(smtpTransport({
-    host: 'localhost',
-    port: 25,
-    secure: false
-  }));
-
-  transporter.sendMail(mailOpts, function (error, response) {
-  });
+  Mailer(data);
 
   this.body = 'sent';
 });
