@@ -24,7 +24,7 @@ server.use(koa_router(server))
     var data = yield parse(this)
 
     var success = yield Captcha(data.captcha);
-
+    
     if (success) {
       this.body = JSON.stringify({ correct: true });
     } else {

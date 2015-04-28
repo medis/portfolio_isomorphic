@@ -12,9 +12,7 @@ var Contact = React.createClass({
   // Handle submit event.
   handleSubmit: function() {
   	if (this.isValid()) {
-  		if (this.isValidCaptcha()) {
-  			this.sendMessage();
-  		}
+  		this.checkCaptchaAndSend();
   	}
   },
 
@@ -46,23 +44,23 @@ var Contact = React.createClass({
   },
 
   // Validate captcha
-  isValidCaptcha: function() {
+  checkCaptchaAndSend: function () {
   	var captcha = document.getElementById("g-recaptcha-response").value,
   			errors = {},
   			ctx = this;
+
   	$.ajax({
   		type: "POST",
   		url: "captcha",
   		data: {captcha: captcha},
   		success: function(json) {
   			var res = JSON.parse(json);
-  			
   			if (res.correct == true) {
-  				return true;
+  				// Send email.
+  				ctx.sendMessage();
   			} else {
   				errors['captcha'] = res.reason;
   				ctx.setState({errors: errors});
-  				return false;
   			}
   		}
   	})

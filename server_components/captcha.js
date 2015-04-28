@@ -6,9 +6,10 @@ var Captcha = function *(key) {
 
 	// Call google API.
 	var result = yield rekwest(url);
-  
+
   try {
-		var parsedData = JSON.parse(data);
+		var parsedData = JSON.parse(result.body);
+
 		return parsedData.success
 	} catch (e) {
 		return false;
