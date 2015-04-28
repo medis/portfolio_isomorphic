@@ -12,7 +12,9 @@ var Contact = React.createClass({
   // Handle submit event.
   handleSubmit: function() {
   	if (this.isValid()) {
-  		this.sendMessage();
+  		if (this.isValidCaptcha()) {
+  			this.sendMessage();
+  		}
   	}
   },
 
@@ -41,6 +43,29 @@ var Contact = React.createClass({
   	}
 
   	return isValid;
+  },
+
+  // Validate captcha
+  isValidCaptcha: function() {
+  	var captcha = document.getElementById("g-recaptcha-response").value,
+  			errors = {},
+  			ctx = this;
+  	$.ajax({
+  		type: "POST",
+  		url: "captcha",
+  		data: {captcha: captcha},
+  		success: function(json) {
+  			var res = JSON.parse(json);
+  			
+  			if (res.correct == true) {
+  				return true;
+  			} else {
+  				errors['captcha'] = res.reason;
+  				ctx.setState({errors: errors});
+  				return false;
+  			}
+  		}
+  	})
   },
 
   sendMessage: function() {
@@ -110,6 +135,11 @@ var Contact = React.createClass({
   	  	  <div className="left">
 	  	  		{this.renderTextField("name", "Name", "fa-smile-o")}
 	  	  		{this.renderTextField("email", "Email", "fa-envelope")}
+
+	  	  		<div className="g-recaptcha" data-sitekey="6LdiEAYTAAAAANX33ylhZIkx6V0ffIfogGHWKcIM" ref="captcha"></div>
+	  	  		{ 'captcha' in this.state.errors &&
+	  	  			<div className="error">{this.state.errors['captcha']}</div>
+	  	  		}
   	  		</div>
   	  		<div className="right">
   	  			{this.renderTextArea("message", "Message")}

@@ -11,17 +11,27 @@ var React = require('react');
 var HtmlComponent = React.createFactory(require('./components/Html.jsx'));
 var parse = require('co-body');
 var Mailer = require('./server_components/mailer');
+var Captcha = require('./server_components/captcha');
 
 // Handle POST requests outside koa-router.
 server.use(koa_router(server))
-      .post('/contact', function *() {
+  .post('/contact', function *() {
+    var data = yield parse(this);
+    Mailer(data);
+    this.body = 'sent';
+  })
+  .post('/captcha', function *() {
+    var data = yield parse(this)
 
-  var data = yield parse(this);
+    var success = yield Captcha(data.captcha);
 
-  Mailer(data);
+    if (success) {
+      this.body = JSON.stringify({ correct: true });
+    } else {
+      this.body = JSON.stringify({ correct: false, reason: "Captcha failed, try again." });
+    }
 
-  this.body = 'sent';
-});
+  });
 
 server.use(serve('public', {defer: true}));
 
