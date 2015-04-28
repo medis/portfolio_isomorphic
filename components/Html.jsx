@@ -29,7 +29,7 @@ var Html = React.createClass({
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/ScrollMagic.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/plugins/animation.gsap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/plugins/debug.addIndicators.js"></script>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src='http://www.google.com/recaptcha/api.js'></script>
         <script src="/js/client.min.js" defer></script>
       </html>
     );
