@@ -45,7 +45,7 @@ var Contact = React.createClass({
 
   // Validate captcha
   checkCaptchaAndSend: function () {
-  	var captcha = document.getElementById("g-recaptcha-response").value,
+  	var captcha = $(".g-recaptcha-response").val(),
   			errors = {},
   			ctx = this;
 
