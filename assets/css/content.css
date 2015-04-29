@@ -162,11 +162,11 @@ span.name {
   border-radius: 10px;
   height: 50px;
   border: solid 1px #bebebe;
-  margin-bottom: 15px;
   text-transform: uppercase;
   font-size: 14px;
   font-family: Roboto;
   padding-left: 50px;
+  outline: none;
 }
 .form.contact textarea {
   width: 100%;
@@ -175,6 +175,7 @@ span.name {
   border-radius: 10px;
   height: 300px;
   padding: 15px;
+  outline: none;
 }
 .form.contact .input-wrapper {
   position: relative;
@@ -185,4 +186,23 @@ span.name {
   top: 6px;
   font-size: 35px;
   color: #cdcdcd;
+}
+
+.input-wrapper {
+  margin-bottom: 15px;
+}
+.input-wrapper.error input[type="text"], .input-wrapper.error textarea {
+  border-color: #FF5353;
+}
+.input-wrapper.error i {
+  color: #FF5353;
+}
+.input-wrapper.error .error {
+  color: #FFF;
+  background: #FF5353;
+  padding-top: 10px;
+  margin-top: -10px;
+  padding: 16px 9px 5px;
+  text-transform: uppercase;
+  font-size: .8em;
 }

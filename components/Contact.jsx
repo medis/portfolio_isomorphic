@@ -134,10 +134,12 @@ var Contact = React.createClass({
 	  	  		{this.renderTextField("name", "Name", "fa-smile-o")}
 	  	  		{this.renderTextField("email", "Email", "fa-envelope")}
 
-	  	  		<div className="g-recaptcha" id="g-recaptcha" ref="captcha" data-sitekey="6LdiEAYTAAAAANX33ylhZIkx6V0ffIfogGHWKcIM"></div>
-	  	  		{ 'captcha' in this.state.errors &&
-	  	  			<div className="error">{this.state.errors['captcha']}</div>
-	  	  		}
+	  	  		<div className="input-wrapper">
+	  	  			<div className="g-recaptcha" id="g-recaptcha" ref="captcha" data-sitekey="6LdiEAYTAAAAANX33ylhZIkx6V0ffIfogGHWKcIM"></div>
+	  	  			{ 'captcha' in this.state.errors &&
+	  	  				<div className="error">{this.state.errors['captcha']}</div>
+	  	  			}
+	  	  		</div>
   	  		</div>
   	  		<div className="right">
   	  			{this.renderTextArea("message", "Message")}
