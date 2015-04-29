@@ -58,6 +58,7 @@ var Contact = React.createClass({
   			if (res.correct == true) {
   				// Send email.
   				ctx.sendMessage();
+  				ctx.clearFields();
   			} else {
   				errors['captcha'] = res.reason;
   				ctx.setState({errors: errors});
@@ -83,8 +84,16 @@ var Contact = React.createClass({
 	    	submitted: false
 	    });
 	  })
-  	
   },
+
+  // Clear field values.
+	clearFields: function() {
+		for (var field in this.refs) {
+      if (this.refs.hasOwnProperty(field)) {
+        this.refs[field].getDOMNode().value = '';
+      }
+    }
+	}, 
 
   getValues: function() {
   	return {
