@@ -187,6 +187,15 @@ span.name {
   font-size: 35px;
   color: #cdcdcd;
 }
+.form.contact button {
+  border: none;
+  background: #2C383C;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 0.6em 1.6em;
+  border-radius: 5px;
+}
 
 .input-wrapper {
   margin-bottom: 15px;
