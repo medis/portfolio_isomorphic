@@ -12,7 +12,7 @@ var Contact = React.createClass({
   // Handle submit event.
   handleSubmit: function() {
   	if (this.isValid()) {
-  		this.sendMessage();
+  		this.checkCaptchaAndSend();
   	}
   },
 
@@ -43,6 +43,30 @@ var Contact = React.createClass({
   	return isValid;
   },
 
+  // Validate captcha
+  checkCaptchaAndSend: function () {
+  	var captcha = $(".g-recaptcha-response").val(),
+  			errors = {},
+  			ctx = this;
+
+  	$.ajax({
+  		type: "POST",
+  		url: "captcha",
+  		data: {captcha: captcha},
+  		success: function(json) {
+  			var res = JSON.parse(json);
+  			if (res.correct == true) {
+  				// Send email.
+  				ctx.sendMessage();
+  				ctx.clearFields();
+  			} else {
+  				errors['captcha'] = res.reason;
+  				ctx.setState({errors: errors});
+  			}
+  		}
+  	})
+  },
+
   sendMessage: function() {
   	// Lets not lose context.
   	var ctx = this;
@@ -60,8 +84,16 @@ var Contact = React.createClass({
 	    	submitted: false
 	    });
 	  })
-  	
   },
+
+  // Clear field values.
+	clearFields: function() {
+		for (var field in this.refs) {
+      if (this.refs.hasOwnProperty(field)) {
+        this.refs[field].getDOMNode().value = '';
+      }
+    }
+	}, 
 
   getValues: function() {
   	return {
@@ -110,6 +142,13 @@ var Contact = React.createClass({
   	  	  <div className="left">
 	  	  		{this.renderTextField("name", "Name", "fa-smile-o")}
 	  	  		{this.renderTextField("email", "Email", "fa-envelope")}
+
+	  	  		<div className="input-wrapper">
+	  	  			<div className="g-recaptcha" id="g-recaptcha" ref="captcha" data-sitekey="6LdiEAYTAAAAANX33ylhZIkx6V0ffIfogGHWKcIM"></div>
+	  	  			{ 'captcha' in this.state.errors &&
+	  	  				<div className="error">{this.state.errors['captcha']}</div>
+	  	  			}
+	  	  		</div>
   	  		</div>
   	  		<div className="right">
   	  			{this.renderTextArea("message", "Message")}

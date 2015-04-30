@@ -10,7 +10,6 @@ var Blog = React.createClass({
   	return (
   		<div>
 	  	  <p>Coming soon.</p>
-	  	  <div>{process.env.RECAPTCHA}</div>
   	  </div>
   	)
   }
