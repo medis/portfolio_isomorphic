@@ -5,6 +5,7 @@ var dehydratedState = window.App; // Sent from server
 var Router = require('react-router');
 var HistoryLocation = Router.HistoryLocation;
 var navigateAction = require('../../actions/navigate');
+var portfolioChangeImageAction = require('../../actions/portfolioChangeImage');
 
 // For Chrome dev tools support.
 window.React = React;

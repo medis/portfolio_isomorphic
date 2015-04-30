@@ -6,6 +6,7 @@ var Router = require('react-router');
 var app = require('./app');
 var navigateAction = require('./actions/navigate');
 var navExpandAction = require('./actions/navExpand');
+var portfolioChangeImage = require('./actions/portfolioChangeImage');
 var serialize = require('serialize-javascript');
 var React = require('react');
 var HtmlComponent = React.createFactory(require('./components/Html.jsx'));

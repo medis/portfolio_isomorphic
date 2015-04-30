@@ -1,12 +1,24 @@
 'use strict';
 var React = require('react');
+var StateMixin = require('react-router').State;
+var FluxibleMixin = require('fluxible').Mixin;
+var PortfolioStore = require('../stores/PortfolioStore');
+var PortfolioItem = require('./PortfolioItem.jsx');
 
 var Portfolio = React.createClass({
+  mixins: [FluxibleMixin/*, StateMixin*/],
+  /*statics: {
+    storeListeners: [PortfolioStore]
+  },*/
+  
   getInitialState: function() {
-  	return {};
+  	return this.getStore(PortfolioStore).getState();
   },
+  
   render: function() {
+    console.log(this);
   	return (
+      <div>
   	  <ul id="portfolio-list">
   	  	<li className="yti">
   	  	  <div className="images">
@@ -27,6 +39,8 @@ var Portfolio = React.createClass({
           </div>
   	  	</li>
   	  </ul>
+      <PortfolioItem/>
+      </div>
   	);
   }
 });

@@ -21,7 +21,7 @@ var PageStore = createStore({
   dehydrate: function() {
     return this.getState();
   },
-  rehydrate: function() {
+  rehydrate: function(state) {
    this.content = state.content;
   }
 });

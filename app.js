@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 var Fluxible = require('fluxible');
 
 var app = new Fluxible({
@@ -7,5 +7,6 @@ var app = new Fluxible({
 
 app.registerStore(require('./stores/ApplicationStore'));
 app.registerStore(require('./stores/PageStore'));
+app.registerStore(require('./stores/PortfolioStore'));
 
 module.exports = app;
