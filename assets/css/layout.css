@@ -101,3 +101,16 @@ main {
   float: right;
   margin-right: 0;
 }
+
+.portfolio .image-wrapper {
+  width: 250px;
+  height: 250px;
+}
+.portfolio .image-wrapper ul.images li {
+  width: 250px;
+  height: 250px;
+}
+.portfolio .image-wrapper ul.images li img {
+  width: 250px;
+  height: 250px;
+}

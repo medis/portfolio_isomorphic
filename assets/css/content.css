@@ -215,3 +215,38 @@ span.name {
   text-transform: uppercase;
   font-size: .8em;
 }
+
+.portfolio {
+  clear: both;
+}
+.portfolio .image-wrapper {
+  border: 1px solid #000;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+.portfolio .image-wrapper ul.images {
+  width: 1800px;
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.portfolio .image-wrapper ul.images li {
+  display: inline-block;
+  float: left;
+}
+.portfolio .image-wrapper ul.images li img {
+  object-fit: cover;
+  object-position: center center;
+}
+.portfolio .controls ul {
+  padding-top: 3px;
+}
+.portfolio .controls li {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 7px;
+  cursor: pointer;
+}

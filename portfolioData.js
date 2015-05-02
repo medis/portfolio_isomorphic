@@ -1,14 +1,14 @@
 'use strict';
 
-var PortfolioData = {
-  yti: {
-    images: [
-	  'public/images/portfolio/yti/1.jpg',
-	  'public/images/portfolio/yti/2.jpg',
-	  'public/images/portfolio/yti/3.jpg',
-	  'public/images/portfolio/yti/logo.jpg',
+var PortfolioData = new Array();
+
+PortfolioData.push({
+	images: [
+	  '/images/portfolio/yti/yti_logo.png',
+	  '/images/portfolio/yti/1.JPG',
+	  '/images/portfolio/yti/2.JPG',
+	  '/images/portfolio/yti/3.JPG',
 	]
-  }
-};
+});
 
 module.exports = PortfolioData;

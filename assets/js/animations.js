@@ -4,7 +4,7 @@ var Animations = Animations || {};
 // place animations object into window object, so it is available when needed.
 window.Animations = Animations;
 
-Animations.animate =  {
+Animations.animate = {
   menuExpand: function(navState) {
     if (navState == false) {
       // Minify.
@@ -26,5 +26,8 @@ Animations.animate =  {
   },
   revealPage: function() {
     TweenMax.to($('main.container .content'), .4, {opacity: 1});
+  },
+  changeImage: function(id, i) {
+    TweenMax.to('.portfolio-' + id + ' ul.images', 1, {x:250*i*(-1), force3D:true});
   }
 }

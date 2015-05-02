@@ -12,25 +12,26 @@ var PortfolioStore = createStore({
   },
   
   initialize: function(dispatcher) {
-    this.currentIndex = 0;
-    this.canChangeImage = true;
     this.data = data;
+    // Add status to all portfolio items.
+    for (var i = 0; i < this.data.length; i++) {
+      this.data[i]['status'] = {
+        currentIndex: 0,
+        canChangeImage: true
+      }
+    }
   },
   
   // Change current image index.
-  handleChangeImage: function(index) {
-    if (index != this.currentIndex) {
-      this.currentIndex = index;
+  handleChangeImage: function(payload) {
+    if (payload.index != this.data[payload.id]['status'].currentIndex) {
+      this.data[payload.id]['status'].currentIndex = payload.index;
       this.emitChange();
     }
   },
   
   getState: function() {
-    return {
-      currentIndex: this.currentIndex,
-      canChangeImage: this.canChangeImage,
-      data: this.data,
-    }
+    return { data: this.data }
   },
   
   dehydrate: function() {
@@ -38,8 +39,6 @@ var PortfolioStore = createStore({
   },
   
   rehydrate: function(state) {
-    this.currentIndex = state.currentIndex;
-    this.canChangeImage = state.canChangeImage;
     this.data = state.data;
   },
   

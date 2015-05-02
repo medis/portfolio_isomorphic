@@ -39,3 +39,16 @@ main {
 		}
 	}
 }
+
+.portfolio .image-wrapper {
+	width: 250px;
+	height: 250px;
+	ul.images li {
+		width: 250px;
+	  height: 250px;
+	  img {
+	  	width: 250px;
+	  	height: 250px;
+	  }
+	}
+}
