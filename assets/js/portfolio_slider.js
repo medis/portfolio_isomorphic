@@ -1,9 +1,18 @@
 // Slider.
 // @TODO CHANGE TO REACT COMPONENT.
 $(function() {
-  if ($('.portfolio-item-inner-wrapper').length == 0) { return; }
+  init_animations();
+  $(document).on("pageChange", function(e, page) {
+    if (page !== "portfolio") { return; }
 
-  $('.portfolio-item-inner-wrapper').hover(over, out);
+    init_animations();
+  });
+
+  function init_animations() {
+    if ($('.portfolio-item-inner-wrapper').length == 0) { return; }
+
+    $('.portfolio-item-inner-wrapper').hover(over, out);
+  }
 
   function over() {
     if ($(this).css("height") == '252px') {
