@@ -29,5 +29,5 @@ Animations.animate = {
   },
   changeImage: function(id, i) {
     TweenMax.to('.portfolio-' + id + ' ul.images', 1, {x:250*i*(-1), force3D:true});
-  }
+  },
 }
