@@ -8,7 +8,9 @@ var PortfolioStore = createStore({
   
   // Event handlers.
   handlers: {
-    'CHANGE_IMAGE': 'handleChangeImage'
+    'CHANGE_IMAGE': 'handleChangeImage',
+    'PREV_IMAGE': 'handlePrevImage',
+    'NEXT_IMAGE': 'handleNextImage'
   },
   
   initialize: function(dispatcher) {
@@ -16,8 +18,7 @@ var PortfolioStore = createStore({
     // Add status to all portfolio items.
     for (var i = 0; i < this.data.length; i++) {
       this.data[i]['status'] = {
-        currentIndex: 0,
-        canChangeImage: true
+        currentIndex: 0
       }
     }
   },
@@ -28,6 +29,30 @@ var PortfolioStore = createStore({
       this.data[payload.id]['status'].currentIndex = payload.index;
       this.emitChange();
     }
+  },
+
+  // Change to next image.
+  handleNextImage: function(payload) {
+    // Check if there is no next image. If so, go to first.
+    if (this.data[payload.id]['status'].currentIndex + 1 == this.data[payload.id].images.length) {
+      this.data[payload.id]['status'].currentIndex = 0;
+    } else {
+      this.data[payload.id]['status'].currentIndex += 1;
+    }
+
+    this.emitChange();
+  },
+
+  // Change to previous image.
+  handlePrevImage: function(payload) {
+    // Check if there is no previous image. If so, go to last.
+    if (this.data[payload.id]['status'].currentIndex == 0) {
+      this.data[payload.id]['status'].currentIndex = this.data[payload.id].images.length - 1;
+    } else {
+      this.data[payload.id]['status'].currentIndex -= 1;
+    }
+
+    this.emitChange();
   },
   
   getState: function() {

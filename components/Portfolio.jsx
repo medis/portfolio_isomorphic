@@ -8,17 +8,9 @@ var portfolioChangeImageAction = require('../actions/portfolioChangeImage');
 
 var Portfolio = React.createClass({
   mixins: [FluxibleMixin, StateMixin],
-  statics: {
-    storeListeners: [PortfolioStore]
-  },
 
   getInitialState: function() {
   	return this.getStore(PortfolioStore).getState();
-  },
-
-  onChange: function() {
-    var state = this.getStore(PortfolioStore).getState();
-    this.setState(state);
   },
 
   render: function() {
@@ -28,7 +20,13 @@ var Portfolio = React.createClass({
       <div>
       {
         this.state.data.map(function(project, id) {
-          return <PortfolioItem key={id} id={id} data={project} onSelectImage={ctx.onSelectImage} />;
+          return <PortfolioItem 
+            key={id}
+            id={id}
+            data={project}
+            onSelectImage={ctx.onSelectImage}
+            onNextImage={ctx.onNextImage}
+            onPrevImage={ctx.onPrevImage} />;
         })
       }
       </div>
@@ -37,8 +35,27 @@ var Portfolio = React.createClass({
 
   // Parent listening for children change image requests.
   onSelectImage: function(id, i) {
-    context.executeAction(portfolioChangeImageAction, {id: id, index: i}, function(data) {
+    var constant = 'CHANGE_IMAGE';
+    context.executeAction(portfolioChangeImageAction, {constant: constant, id: id, index: i}, function(data) {
       Animations.animate.changeImage(id, i);
+    });
+  },
+
+  // Parent listening for children next image request.
+  onNextImage: function(id) {
+    var constant = 'NEXT_IMAGE';
+    var ctx = this;
+    context.executeAction(portfolioChangeImageAction, {constant: constant, id: id}, function(data) {
+      Animations.animate.changeImage(id, ctx.state.data[id]['status'].currentIndex);
+    });
+  },
+
+  // Parent listening for children previous image request.
+  onPrevImage: function(id) {
+    var constant = 'PREV_IMAGE';
+    var ctx = this;
+    context.executeAction(portfolioChangeImageAction, {constant: constant, id: id}, function(data) {
+      Animations.animate.changeImage(id, ctx.state.data[id]['status'].currentIndex);
     });
   },
 

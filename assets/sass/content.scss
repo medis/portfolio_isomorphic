@@ -201,11 +201,37 @@ span.name { font-weight: bold; }
 }
 .portfolio {
 	clear: both;
+	float: left;
+	.portfolio-item-inner-wrapper {
+		height: 252px;
+  	overflow: hidden;
+  	.open { 
+		  position: absolute;
+		  top: 100px;
+		  left: 0;
+		  opacity: 0;
+		  right: 0;
+		  z-index: 10;
+		  text-align: center;
+		  vertical-align: middle;
+		  color: #C0C0C0;
+		  text-shadow: 2px 1px #000000;
+		  i { 
+		  	font-size: 32px;
+		  	vertical-align: middle;
+		  }
+		  span { 
+		  	padding-left: 10px;
+		  	vertical-align: middle;
+		  }
+  	}
+	}
 	.image-wrapper {
 	  border: 1px solid #000;
 	  overflow: hidden;
 	  display: inline-block;
 	  position: relative;
+	  cursor: pointer;
 		ul.images {
 			width: 1800px;
 			display: inline-block;
@@ -225,8 +251,17 @@ span.name { font-weight: bold; }
 		}
 	}
 	.controls {
+		.control {
+			display: inline-block;
+		  width: 16px;
+		  text-align: center;
+		  cursor: pointer;
+		}
 		ul { 
 			padding-top: 3px;
+			display: inline-block;
+			width: 218px;
+  		text-align: center;
 		}
 		li {
 			display: inline-block;

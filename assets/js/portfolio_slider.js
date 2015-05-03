@@ -1,36 +1,21 @@
 // Slider.
 // @TODO CHANGE TO REACT COMPONENT.
 $(function() {
-  // Initialize portfolio slider.
-  initPortfolioSlider();
+  if ($('.portfolio-item-inner-wrapper').length == 0) { return; }
 
-  // Initialize portfolio slider when react changes page.
-  $(document).on("pageChange", function() {
-    // Initialize portfolio slider.
-    initPortfolioSlider();
-  })
+  $('.portfolio-item-inner-wrapper').hover(over, out);
 
-  function initPortfolioSlider() {
-    if ($('#portfolio-list').length == 0) { return; }
+  function over() {
+    if ($(this).css("height") == '252px') {
+      TweenMax.to($(this), 0.2, {height: "280px"});
+      TweenMax.to($(this).find('.open'), 0.2, {opacity: 1});
+    }
+  }
 
-    var $slides = $("#portfolio-list .images li");
-    var currentSlide = $("#portfolio-list .images li").length - 1;
-    var imgWidth = $slides.width();
-
-    TweenLite.set($slides.filter(":lt(3)"), {left: imgWidth});
-
-    $("#portfolio-list .controls li").click(function() {
-      $("#portfolio-list .controls li.active").removeClass("active");
-      $(this).addClass("active");
-
-      // Hide current slide.
-      TweenLite.to( $slides.eq(currentSlide), 1, {left: ((-1)*imgWidth) + "px" } );   
-
-      // Slide in correct slide.
-      TweenLite.fromTo( $slides.eq($(this).index()), 1, {left: imgWidth + "px"}, {left:"0px"} );
-
-      // Set new index.
-      currentSlide = $(this).index();
-    });
+  function out() {
+    if ($(this).css("height") == '280px') {
+      TweenMax.to($(this), 0.2, {height: "252px"});
+      TweenMax.to($(this).find('.open'), 0.2, {opacity: 0});
+    }
   }
 });

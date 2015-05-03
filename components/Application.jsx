@@ -4,11 +4,12 @@ var Nav = require('./Nav.jsx');
 var FluxibleMixin = require('fluxible').Mixin;
 var RouterHandler = require('react-router').RouteHandler;
 var ApplicationStore = require('../stores/ApplicationStore');
+var PortfolioStore = require('../stores/PortfolioStore');
 
 var Application = React.createClass({
   mixins: [FluxibleMixin],
   statics: {
-    storeListeners: [ApplicationStore]
+    storeListeners: [ApplicationStore, PortfolioStore]
   },
   
   getInitialState: function() {
