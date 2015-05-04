@@ -5,6 +5,9 @@
   text-align: center;
   cursor: pointer;
 }
+#navigation #menuToggle i {
+  color: #daddde;
+}
 #navigation .main-menu {
   list-style: none;
   margin: 0;

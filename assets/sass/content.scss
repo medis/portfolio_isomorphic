@@ -1,3 +1,5 @@
+@import "_mixins";
+
 .content {
   min-height: 500px;
 }
@@ -172,13 +174,7 @@ span.name { font-weight: bold; }
 	  color: rgb(205, 205, 205);
 	}
 	button {
-		border: none;
-	  background: #2C383C;
-	  color: #FFF;
-	  text-transform: uppercase;
-	  font-size: 0.8em;
-	  padding: 0.6em 1.6em;
-	  border-radius: 5px;
+		@include button;
 	}
 }
 .input-wrapper { 
@@ -247,6 +243,7 @@ span.name { font-weight: bold; }
 		      object-fit: cover;
 		      object-position: center center;
 		    }
+		    &:first-child img { object-fit: contain; }
 		  }
 		}
 	}
@@ -268,8 +265,7 @@ span.name { font-weight: bold; }
 			font-size: 16px;
 			margin-right: 7px;
 			cursor: pointer;
-			//&.active div { background: green; }
-			//&:hover { @extend .active; }
 		}
 	}
+	&.yti .image-wrapper ul.images li:first-child { background: #000; }
 }

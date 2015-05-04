@@ -10,15 +10,11 @@
   text-transform: uppercase;
   overflow: hidden;
 }
-#colorbox .images ul {
+#colorbox .images .image {
   padding: 0;
   margin: 0;
 }
-#colorbox .images ul li {
-  padding: 0;
-  margin: 0;
-}
-#colorbox .images ul li img {
+#colorbox .images .image img {
   object-fit: cover;
   object-position: center center;
 }
@@ -35,4 +31,29 @@
 }
 #colorbox .text p {
   font-size: 0.9em;
+}
+#colorbox .owl-prev, #colorbox .owl-next {
+  position: absolute;
+  top: 50%;
+  background: #2C383C;
+  padding: 0.5em;
+  left: 0;
+  font-size: 32px;
+  color: #daddde;
+}
+#colorbox .owl-next {
+  left: auto;
+  right: 0;
+}
+#colorbox .visit a {
+  border: none;
+  background: #2C383C;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 0.6em 1.6em;
+  border-radius: 5px;
+  color: #daddde;
+  text-decoration: none;
+  display: inline-block;
 }

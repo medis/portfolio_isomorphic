@@ -1,3 +1,5 @@
+@import "_mixins";
+
 #colorbox {
   .images {
     width: 100%;
@@ -10,16 +12,12 @@
     text-align: center;
     text-transform: uppercase;
     overflow: hidden;
-    ul {
+    .image {
       padding: 0;
       margin: 0;
-      li {
-        padding: 0;
-        margin: 0;
-        img {
-          object-fit: cover;
-          object-position: center center;
-        }
+      img {
+        object-fit: cover;
+        object-position: center center;
       }
     }
     &:after {
@@ -36,5 +34,25 @@
   }
   .text p {
     font-size: 0.9em;
+  }
+  .owl-prev {
+    position: absolute;
+    top: 50%;
+    background: #2C383C;
+    padding: 0.5em;
+    left: 0;
+    font-size: 32px;
+    color: #daddde;
+  }
+  .owl-next { 
+    @extend .owl-prev;
+    left: auto;
+    right: 0;
+  }
+  .visit a {
+    @include button;
+    color: #daddde;
+    text-decoration: none;
+    display: inline-block;
   }
 }

@@ -10,6 +10,7 @@ var Html = React.createClass({
           <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700' rel='stylesheet' type='text/css' />
           <link rel="stylesheet" media="all" href="/css/normalize.css" />
           <link rel="stylesheet" media="all" href="/css/styles.min.css" />
+          <link rel="stylesheet" href="/css/owl.carousel.css" />
           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/example1/colorbox.min.css" />
         </head>
@@ -32,6 +33,7 @@ var Html = React.createClass({
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/plugins/debug.addIndicators.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox-min.js"></script>
         <script src='//www.google.com/recaptcha/api.js'></script>
+        <script src="/js/owl.carousel.min.js"></script>
         <script src="/js/client.min.js" defer></script>
       </html>
     );

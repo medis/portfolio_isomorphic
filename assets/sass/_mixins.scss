@@ -2,3 +2,13 @@
   border-bottom-color: $colour;
   i { color: $colour; }
 }
+
+@mixin button {
+	border: none;
+  background: #2C383C;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 0.6em 1.6em;
+  border-radius: 5px;
+}

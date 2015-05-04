@@ -41,7 +41,7 @@ $(function() {
   function init_popup() {
     $('.portfolio').each(function() {
       // Init Colorbox.
-      $(this).find('ul.images').colorbox({
+      $(this).find('.image-wrapper').colorbox({
         href:"/portfolio/" + $(this).attr('data-name') + "/index.html",
         width: "70%",
         height: "90%",
@@ -56,6 +56,20 @@ $(function() {
     var height = width * .1;
 
     document.styleSheets[2].addRule('#colorbox .images:after','border-left: '+width+'px solid transparent; border-right: '+width+'px solid transparent; border-bottom: '+height+'px solid #fff;');
-    console.log(document.styleSheets[2]);
   });
+
+  $(document).bind('cbox_complete', function(){
+    $('#cboxLoadedContent .images').owlCarousel({
+      loop: true,
+      animateOut: 'fadeOut',
+      items: 1,
+      margin:10,
+      nav: true,
+      navText: ['<i class="fa fa-angle-double-left"></i>', '<i class="fa fa-angle-double-right"></i>'],
+      dots: false,
+      stagePadding: 0,
+      smartSpeed:450,
+    });
+  });
+  
 });
