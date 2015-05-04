@@ -26,7 +26,7 @@ var PortfolioItem = React.createClass({
   render: function() {
   	var ctx = this;
     return (
-    	<div className={"portfolio portfolio-" + this.props.id}>
+    	<div className={"portfolio portfolio-" + this.props.id + " " + this.props.data.tags.join(' ')} data-name={this.props.data.name}>
     	  <div className="portfolio-item-inner-wrapper">
 	    		<div className="image-wrapper">
 	    			<div className="open"><i className="fa fa-eye"></i>OPEN</div>

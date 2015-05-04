@@ -8,7 +8,11 @@ PortfolioData.push({
 	  '/images/portfolio/yti/1.JPG',
 	  '/images/portfolio/yti/2.JPG',
 	  '/images/portfolio/yti/3.JPG',
-	]
+	],
+	tags: [
+		'yti'
+	],
+	name: "yti",
 });
 
 module.exports = PortfolioData;

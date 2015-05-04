@@ -1,11 +1,14 @@
+
 // Slider.
 // @TODO CHANGE TO REACT COMPONENT.
 $(function() {
   init_animations();
+  init_popup();
   $(document).on("pageChange", function(e, page) {
     if (page !== "portfolio") { return; }
     changeActiveImage();
     init_animations();
+    init_popup();
   });
 
   function init_animations() {
@@ -34,4 +37,25 @@ $(function() {
       TweenMax.to('.portfolio-' + i + ' ul.images', 0, {x:250*active_index*(-1), force3D:true});
     });
   }
+
+  function init_popup() {
+    $('.portfolio').each(function() {
+      // Init Colorbox.
+      $(this).find('ul.images').colorbox({
+        href:"/portfolio/" + $(this).attr('data-name') + "/index.html",
+        width: "70%",
+        height: "90%",
+      });
+    });
+  }
+
+  $(document).bind('cbox_open', function(){
+    // 70%, make it half.
+    var width = ($(window).width() - 62) * .7 / 2;
+    // Calculate triangle height relative to width. Make it 20% width.
+    var height = width * .1;
+
+    document.styleSheets[2].addRule('#colorbox .images:after','border-left: '+width+'px solid transparent; border-right: '+width+'px solid transparent; border-bottom: '+height+'px solid #fff;');
+    console.log(document.styleSheets[2]);
+  });
 });
