@@ -196,7 +196,6 @@ span.name { font-weight: bold; }
 	}
 }
 .portfolio {
-	clear: both;
 	float: left;
 	.portfolio-item-inner-wrapper {
 		height: 252px;
@@ -268,4 +267,6 @@ span.name { font-weight: bold; }
 		}
 	}
 	&.yti .image-wrapper ul.images li:first-child { background: #000; }
+	&.condor .image-wrapper ul.images li:first-child { background: #6C86C6; }
 }
+

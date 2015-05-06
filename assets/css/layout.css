@@ -102,6 +102,12 @@ main {
   margin-right: 0;
 }
 
+.portfolio {
+  margin-bottom: 2em;
+}
+.portfolio:nth-child(3n+2) {
+  margin: 0 5%;
+}
 .portfolio .image-wrapper {
   width: 250px;
   height: 250px;

@@ -18,14 +18,15 @@ $(function() {
   }
 
   function over() {
-    if ($(this).css("height") == '252px') {
+    //close_others($(this).parents('.portfolio').index());
+    if ($(this).css("height") != '280px') {
       TweenMax.to($(this), 0.2, {height: "280px"});
       TweenMax.to($(this).find('.open'), 0.2, {opacity: 1});
     }
   }
 
   function out() {
-    if ($(this).css("height") == '280px') {
+    if ($(this).css("height") != '252px') {
       TweenMax.to($(this), 0.2, {height: "252px"});
       TweenMax.to($(this).find('.open'), 0.2, {opacity: 0});
     }

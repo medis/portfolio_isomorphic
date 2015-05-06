@@ -40,15 +40,21 @@ main {
 	}
 }
 
-.portfolio .image-wrapper {
-	width: 250px;
-	height: 250px;
-	ul.images li {
+.portfolio {
+	margin-bottom: 2em;
+	&:nth-child(3n+2) {
+		margin: 0 5%;
+	}
+	.image-wrapper {
 		width: 250px;
-	  height: 250px;
-	  img {
-	  	width: 250px;
-	  	height: 250px;
-	  }
+		height: 250px;
+		ul.images li {
+			width: 250px;
+		  height: 250px;
+		  img {
+		  	width: 250px;
+		  	height: 250px;
+		  }
+		}
 	}
 }
