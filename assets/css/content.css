@@ -216,9 +216,6 @@ span.name {
   font-size: .8em;
 }
 
-.portfolio {
-  float: left;
-}
 .portfolio .portfolio-item-inner-wrapper {
   height: 280px;
   overflow: hidden;

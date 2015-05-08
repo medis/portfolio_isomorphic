@@ -104,9 +104,25 @@ main {
 
 .portfolio {
   margin-bottom: 2em;
+  text-align: center;
 }
-.portfolio:nth-child(3n+2) {
-  margin: 0 5%;
+@media (min-width: 900px) {
+  .portfolio {
+    float: left;
+    text-align: left;
+  }
+}
+.lt-ie9 .portfolio {
+  float: left;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  .portfolio:nth-child(3n+2) {
+    margin: 0 5% 2em 5%;
+  }
+}
+.lt-ie9 .portfolio:nth-child(3n+2) {
+  margin: 0 5% 2em 5%;
 }
 .portfolio .image-wrapper {
   width: 250px;

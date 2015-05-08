@@ -42,8 +42,13 @@ main {
 
 .portfolio {
 	margin-bottom: 2em;
+	text-align: center;
+	@include breakpoint($desktop) { 
+		float: left;
+		text-align: left;
+	}
 	&:nth-child(3n+2) {
-		margin: 0 5%;
+		@include breakpoint($desktop) { margin: 0 5% 2em 5%; }
 	}
 	.image-wrapper {
 		width: 250px;
