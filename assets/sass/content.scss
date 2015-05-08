@@ -27,11 +27,11 @@ main {
 	.images {
 		position: relative;
 		height: 85%;
-  	width: 100%;
-  	> ul {
-  		width: 100%;
-  		height: 100%;
-	  	li {
+	width: 100%;
+	> ul {
+		width: 100%;
+		height: 100%;
+		li {
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -85,7 +85,7 @@ main {
 		text-align: center;
 		i {   
 			font-size: 4em;
-  		color: #cecece;
+		color: #cecece;
 		}
 	}
 }
@@ -109,9 +109,9 @@ main {
 	h3 { 
 		margin: 0;
 		text-transform: uppercase;
-  	font-size: 1em;
-  	padding-bottom: 0.5em;
-  	color: rgb(103, 92, 255);
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	color: rgb(103, 92, 255);
 	}
 	p { margin: 0; }
 	&.server {
@@ -198,9 +198,9 @@ span.name { font-weight: bold; }
 .portfolio {
 	float: left;
 	.portfolio-item-inner-wrapper {
-		height: 252px;
-  	overflow: hidden;
-  	.open { 
+		height: 280px;
+		overflow: hidden;
+	.open { 
 		  position: absolute;
 		  top: 100px;
 		  left: 0;
@@ -212,14 +212,14 @@ span.name { font-weight: bold; }
 		  color: #C0C0C0;
 		  text-shadow: 2px 1px #000000;
 		  i { 
-		  	font-size: 32px;
-		  	vertical-align: middle;
+			font-size: 32px;
+			vertical-align: middle;
 		  }
 		  span { 
-		  	padding-left: 10px;
-		  	vertical-align: middle;
+			padding-left: 10px;
+			vertical-align: middle;
 		  }
-  	}
+	}
 	}
 	.image-wrapper {
 	  border: 1px solid #000;
@@ -235,18 +235,20 @@ span.name { font-weight: bold; }
 		  margin: 0;
 		  position: relative;
 		  li {
-		    display: inline-block;
-		    float: left;
+			display: inline-block;
+			float: left;
 
-		    img {
-		      object-fit: cover;
-		      object-position: center center;
-		    }
-		    &:first-child img { object-fit: contain; }
+			img {
+			  object-fit: cover;
+			  object-position: center center;
+			}
+			&:first-child img { object-fit: contain; }
 		  }
 		}
 	}
 	.controls {
+		opacity: 0;
+		transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,-.0025,0,10,0,1);
 		.control {
 			display: inline-block;
 		  width: 16px;
@@ -257,7 +259,7 @@ span.name { font-weight: bold; }
 			padding-top: 3px;
 			display: inline-block;
 			width: 218px;
-  		text-align: center;
+		text-align: center;
 		}
 		li {
 			display: inline-block;
