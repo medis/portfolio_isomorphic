@@ -291,6 +291,9 @@ span.name {
 .portfolio.yti .image-wrapper ul.images li:first-child {
   background: #000;
 }
+.portfolio.brockmansgin .image-wrapper ul.images li:first-child {
+  background: #000;
+}
 .portfolio.condor .image-wrapper ul.images li:first-child {
   background: #6C86C6;
 }
